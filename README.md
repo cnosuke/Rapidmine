@@ -7,7 +7,7 @@ Rapidmine
 RedmineのAPIでRapidにするのでR**api**dmine
 
 ##使い方
-* config.yaml を作って下さい。
+### config.yaml を作って下さい。
 中身は下のような感じで。
 <pre>
 url: https://your.redmine.path/
@@ -15,7 +15,7 @@ api: your_api_key (cf. redmine's API key)
 user: yourEmail@example.com
 </pre>
 
-* チケットの一覧を見る
+### チケットの一覧を見る
 <pre>
 ruby rapidmine.rb --list issues --user cnosuke --project testProject
 </pre>
@@ -30,7 +30,7 @@ ruby rapidmine.rb -l -u cnosuke -p testProject
 ruby rapidmine.rb -h
 </pre>
 
-* チケットを作る
+### チケットを作る
 <pre>
 ruby rapidmine.rb --create issues --project testProject --user lovelykitty -s 'Drink a cup of water'
 </pre>
@@ -40,13 +40,13 @@ ruby rapidmine.rb --create issues --project testProject --user lovelykitty -s 'D
 ruby rapidmine.rb -c -p test -u lovelykitty -s 'Drink a cup of water'
 </pre>
 
-* オプションとかは
+### オプションとか
 下記ヘルプに適当に書いてあります。雑過ぎるかも。
 <pre>
 ruby rapidmine.rb -h
 </pre>
 
-* チケットの中を見たい！
+### チケットの中を見たい！
 <pre>
 ruby rapidmine.rb -o 1234
 </pre>
