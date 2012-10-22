@@ -183,9 +183,13 @@ OPT.on("-h","--help") do
   exit
 end
 
-OPT.on("-l","--list VAL") do |e|
+OPT.on("-l","--list [VAL]") do |e|
   CMD[:method] = :list
-  CMD[:model] = e
+  if e
+    CMD[:model] = e
+  else
+    CMD[:model] = "issues"
+  end
 end
 
 OPT.on("-c","--create [VAL]") do |e|
