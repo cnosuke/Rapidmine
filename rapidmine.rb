@@ -226,7 +226,7 @@ OPT.on("-T","--tracker VAL") do |e|
 end
 
 OPT.on("-o","--open VAL") do |e|
-  system("open 'https://dev.has-key.org/issues/#{e}'")
+  system("open '#{CONFIG["url"]}/issues/#{e}'")
   exit
 end
 
