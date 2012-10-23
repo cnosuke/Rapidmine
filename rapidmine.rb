@@ -11,7 +11,7 @@ Version = "0.2 alpha"
 
 class NotImplementationError < StandardError ;end
 
-CONFIG = YAML.load(open("config.yaml").read)
+CONFIG = YAML.load(open([File.dirname(__FILE__),'/config.yaml'].join).read)
 
 class String
   def minify
@@ -226,7 +226,7 @@ OPT.on("-T","--tracker VAL") do |e|
 end
 
 OPT.on("-o","--open VAL") do |e|
-  system("open '#{CONFIG["url"]}/issues/#{e}'")
+  system("open '#{CONFIG["url"]}issues/#{e}'")
   exit
 end
 
