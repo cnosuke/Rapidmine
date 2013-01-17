@@ -13,6 +13,8 @@ RedmineのAPIでRapidにするのでR**api**dmine
 url: https://your.redmine.path/
 api: your_api_key (cf. redmine's API key)
 user: yourEmail@example.com
+ssl: true (option)
+certificate: path_to_your_redmines_ca_file (option)
 </pre>
 
 ### チケットの一覧を見る

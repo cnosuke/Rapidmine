@@ -28,10 +28,13 @@ class Rapidmine
   def http(method, url, data = nil)
     uri = URI.parse(url)
     https = Net::HTTP.new(uri.host, uri.port)
-    https.use_ssl = true
-    # https.ca_file = '/usr/share/ssl/cert.pem'
-    https.verify_mode = OpenSSL::SSL::VERIFY_PEER
-    https.verify_depth = 5
+
+    if CONFIG["ssl"]
+      https.use_ssl = true
+      https.ca_file = CONFIG["certificate"]
+      https.verify_mode = OpenSSL::SSL::VERIFY_PEER
+      https.verify_depth = 5
+    end
 
     if data
       dd = { :issue => { } }
